@@ -1,273 +1,316 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Berne Ting | Digital Card</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<title>Berne Ting | Research Profile</title>
 
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      color: #1f1f1f;
-      background: linear-gradient(135deg, #f7f7fb 0%, #ecebff 45%, #ffeef4 100%);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 32px 16px;
-    }
+<style>
 
-    .card {
-      width: 100%;
-      max-width: 860px;
-      background: rgba(255, 255, 255, 0.82);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.7);
-      border-radius: 28px;
-      box-shadow: 0 18px 60px rgba(31, 31, 31, 0.12);
-      overflow: hidden;
-    }
+*{box-sizing:border-box;}
 
-    .hero {
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 32px;
-      padding: 40px;
-      align-items: center;
-    }
+body{
+margin:0;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+color:#1f1f1f;
+background:linear-gradient(135deg,#f7f7fb 0%,#ecebff 45%,#ffeef4 100%);
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:40px 20px;
+}
 
-    .avatar-wrap {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+.card{
+width:100%;
+max-width:900px;
+background:rgba(255,255,255,.9);
+border-radius:28px;
+box-shadow:0 20px 60px rgba(0,0,0,.12);
+overflow:hidden;
+}
 
-    .avatar {
-      width: 180px;
-      height: 180px;
-      border-radius: 28px;
-      object-fit: cover;
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-      transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
-      display: block;
-    }
+.hero{
+display:grid;
+grid-template-columns:220px 1fr;
+gap:32px;
+padding:40px;
+align-items:center;
+}
 
-    .avatar:hover {
-      transform: translateY(-6px) scale(1.03) rotate(-1deg);
-      box-shadow: 0 18px 38px rgba(0, 0, 0, 0.18);
-      filter: brightness(1.03);
-    }
+.avatar{
+width:180px;
+height:180px;
+border-radius:24px;
+object-fit:cover;
+box-shadow:0 12px 30px rgba(0,0,0,.12);
+transition:.3s;
+}
 
-    .label {
-      display: inline-block;
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: #f3f3f3;
-      font-size: 13px;
-      color: #5b5b5b;
-      margin-bottom: 14px;
-      border: 1px solid #eaeaea;
-    }
+.avatar:hover{
+transform:scale(1.05);
+}
 
-    h1 {
-      margin: 0 0 10px;
-      font-size: 2.2rem;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-    }
+.label{
+display:inline-block;
+padding:6px 12px;
+border-radius:999px;
+background:#f3f3f3;
+font-size:13px;
+margin-bottom:12px;
+}
 
-    .subtitle {
-      margin: 0 0 16px;
-      color: #666;
-      font-size: 1.05rem;
-      line-height: 1.7;
-    }
+h1{
+margin:0 0 8px;
+font-size:2.2rem;
+}
 
-    .intro {
-      margin: 0;
-      color: #3d3d3d;
-      line-height: 1.85;
-      font-size: 1rem;
-    }
+.subtitle{
+color:#666;
+margin-bottom:14px;
+}
 
-    .section {
-      padding: 0 40px 32px;
-    }
+.intro{
+line-height:1.7;
+}
 
-    .section-title {
-      font-size: 0.95rem;
-      color: #6b6b6b;
-      margin: 0 0 14px;
-      letter-spacing: 0.02em;
-    }
+.section{
+padding:0 40px 30px;
+}
 
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
+.section-title{
+font-size:.95rem;
+color:#6b6b6b;
+margin-bottom:12px;
+}
 
-    .tag {
-      padding: 10px 14px;
-      border-radius: 14px;
-      background: #fafafa;
-      border: 1px solid #ededed;
-      font-size: 0.95rem;
-      color: #3f3f3f;
-    }
+.tags{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+}
 
-    .socials {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      padding: 0 40px 40px;
-    }
+.tag{
+padding:10px 14px;
+border-radius:12px;
+background:#fafafa;
+border:1px solid #ededed;
+font-size:.9rem;
+}
 
-    .social-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      color: #222;
-      background: #ffffff;
-      border: 1px solid #ececec;
-      padding: 12px 16px;
-      border-radius: 14px;
-      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
-      font-size: 0.95rem;
-    }
+.publications{
+line-height:1.6;
+font-size:.95rem;
+}
 
-    .social-link:hover {
-      transform: translateY(-3px);
-      background: #fcfcfc;
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
-    }
+.socials{
+display:flex;
+flex-wrap:wrap;
+gap:12px;
+padding:0 40px 40px;
+}
 
-    .icon {
-      width: 18px;
-      height: 18px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
+.social-link{
+display:inline-flex;
+align-items:center;
+gap:8px;
+text-decoration:none;
+color:#222;
+background:white;
+border:1px solid #ececec;
+padding:10px 14px;
+border-radius:12px;
+transition:.25s;
+}
 
-    .footer {
-      padding: 18px 40px 28px;
-      font-size: 0.88rem;
-      color: #7a7a7a;
-    }
+.social-link svg{
+height:18px;
+}
 
-    @media (max-width: 760px) {
-      .hero {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 24px;
-        padding: 28px 22px;
-      }
+.social-link:hover{
+transform:translateY(-3px);
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
 
-      .section,
-      .socials,
-      .footer {
-        padding-left: 22px;
-        padding-right: 22px;
-      }
+.footer{
+padding:18px 40px 30px;
+font-size:.85rem;
+color:#777;
+}
 
-      h1 {
-        font-size: 1.8rem;
-      }
+@media(max-width:760px){
 
-      .avatar {
-        width: 150px;
-        height: 150px;
-        border-radius: 24px;
-      }
+.hero{
+grid-template-columns:1fr;
+text-align:center;
+}
 
-      .tags,
-      .socials {
-        justify-content: center;
-      }
-    }
-  </style>
+.tags,
+.socials{
+justify-content:center;
+}
+
+}
+
+</style>
 </head>
+
+
 <body>
-  <main class="card">
-    <section class="hero">
-      <div class="avatar-wrap">
-        <img
-<div class="avatar-wrap">
-  <img
-    class="avatar"
-    src="images/profile.png"
-    alt="Berne Ting"
-  />
+
+<main class="card">
+
+<section class="hero">
+
+<div>
+<img class="avatar" src="images/profile.png" alt="Berne Ting">
 </div>
 
-      <div>
-        <div class="label">Digital Card</div>
-        <h1>Berne Ting</h1>
-        <p class="subtitle">
-          Researcher in music therapy, brain science, and evidence-based medicine
-        </p>
-        <p class="intro">
-          I am interested in the relationship between music, the brain, and mental health.
-          My work focuses on non-pharmacological interventions, especially music-based
-          approaches that may support cognitive and emotional well-being in older adults.
-          I am also exploring how generative AI can assist research, teaching, and academic communication.
-        </p>
-      </div>
-    </section>
+<div>
 
-    <section class="section">
-      <h2 class="section-title">Research Interests</h2>
-      <div class="tags">
-        <div class="tag">Music Therapy</div>
-        <div class="tag">Brain Science</div>
-        <div class="tag">Geriatric Mental Health</div>
-        <div class="tag">Meta-Analysis</div>
-        <div class="tag">Generative AI</div>
-      </div>
-    </section>
+<div class="label">Research Profile</div>
 
-    <section class="socials">
-      <a class="social-link" href="https://github.com" target="_blank" rel="noopener noreferrer">
-        <span class="icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-            <path d="M12 .5C5.65.5.5 5.65.5 12A11.5 11.5 0 0 0 8.36 22.1c.58.1.79-.25.79-.56v-2.02c-3.18.69-3.85-1.35-3.85-1.35-.52-1.3-1.26-1.64-1.26-1.64-1.03-.7.08-.69.08-.69 1.14.08 1.74 1.16 1.74 1.16 1.01 1.73 2.65 1.23 3.3.94.1-.73.39-1.23.71-1.52-2.54-.29-5.22-1.27-5.22-5.63 0-1.24.44-2.25 1.16-3.04-.12-.29-.5-1.46.11-3.04 0 0 .95-.31 3.11 1.16A10.9 10.9 0 0 1 12 6.32c.97 0 1.95.13 2.86.38 2.16-1.47 3.11-1.16 3.11-1.16.61 1.58.23 2.75.11 3.04.72.79 1.16 1.8 1.16 3.04 0 4.37-2.69 5.34-5.25 5.62.4.35.76 1.05.76 2.12v3.14c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/>
-          </svg>
-        </span>
-        GitHub
-      </a>
+<h1>Berne Ting</h1>
 
-      <a class="social-link" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-        <span class="icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-            <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5Zm8.88 1.12a1.13 1.13 0 1 1 0 2.26 1.13 1.13 0 0 1 0-2.26ZM12 6.5A5.5 5.5 0 1 1 6.5 12 5.51 5.51 0 0 1 12 6.5Zm0 1.5A4 4 0 1 0 16 12a4 4 0 0 0-4-4Z"/>
-          </svg>
-        </span>
-        Instagram
-      </a>
+<p class="subtitle">
+Music Therapy • Brain Science • Evidence-Based Medicine
+</p>
 
-      <a class="social-link" href="mailto:yourmail@example.com">
-        <span class="icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-            <path d="M3 5.5A2.5 2.5 0 0 1 5.5 3h13A2.5 2.5 0 0 1 21 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 18.5v-13Zm2.2-1A1.2 1.2 0 0 0 4 5.7v.33l8 5.33 8-5.33V5.7a1.2 1.2 0 0 0-1.2-1.2h-13ZM20 7.84l-7.58 5.05a.75.75 0 0 1-.84 0L4 7.84v10.46c0 .66.54 1.2 1.2 1.2h13.6c.66 0 1.2-.54 1.2-1.2V7.84Z"/>
-          </svg>
-        </span>
-        Email
-      </a>
-    </section>
+<p class="intro">
+My research focuses on non-pharmacological interventions for mental health and
+cognitive well-being, particularly music-based approaches in aging populations.
+I am also interested in the intersection between generative AI, research methodology,
+and interdisciplinary communication in medicine and the humanities.
+</p>
 
-    <div class="footer">
-      Simple personal homepage design for course assignment.
-    </div>
-  </main>
+</div>
+
+</section>
+
+
+
+<section class="section">
+
+<h2 class="section-title">Research Interests</h2>
+
+<div class="tags">
+
+<div class="tag">Music Therapy</div>
+<div class="tag">Brain Science</div>
+<div class="tag">Geriatric Mental Health</div>
+<div class="tag">Meta-Analysis</div>
+<div class="tag">Evidence-Based Medicine</div>
+<div class="tag">Generative AI</div>
+
+</div>
+
+</section>
+
+
+
+<section class="section">
+
+<h2 class="section-title">Selected Publications</h2>
+
+<div class="publications">
+
+<p>
+Ting B. et al. (2024).
+<i>The Sound of Memory: Investigating Music Therapy's Cognitive Benefits in Dementia.</i>
+Journal of Personalized Medicine.
+</p>
+
+<p>
+Ting B. et al. (2023).
+<i>Does Music Intervention Improve Anxiety in Dementia Patients?</i>
+Journal of Clinical Medicine.
+</p>
+
+<p>
+Ting B. et al. (2024).
+<i>Multifaceted Music Therapy for Depression in Dementia.</i>
+European Journal of Investigation in Health, Psychology and Education.
+</p>
+
+</div>
+
+</section>
+
+
+
+<section class="socials">
+
+<a class="social-link" href="https://berneting.github.io/HW2-digital-card/" target="_blank">
+
+<svg viewBox="0 0 16 16" fill="currentColor">
+<path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 005.47 7.59c.4.07.55-.17.55-.38
+0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94
+-.09-.23-.48-.94-.82-1.13
+-.28-.15-.68-.52-.01-.53
+.63-.01 1.08.58 1.23.82
+.72 1.21 1.87.87 2.33.66
+.07-.52.28-.87.51-1.07
+-1.78-.2-3.64-.89-3.64-3.95
+0-.87.31-1.59.82-2.15
+-.08-.2-.36-1.02.08-2.12
+0 0 .67-.21 2.2.82
+a7.64 7.64 0 012.01-.27
+c.68 0 1.36.09 2.01.27
+1.53-1.04 2.2-.82 2.2-.82
+.44 1.1.16 1.92.08 2.12
+.51.56.82 1.27.82 2.15
+0 3.07-1.87 3.75-3.65 3.95
+.29.25.54.73.54 1.48
+0 1.07-.01 1.93-.01 2.2
+0 .21.15.46.55.38
+A8.01 8.01 0 0016 8
+c0-4.42-3.58-8-8-8z"/>
+</svg>
+
+Website
+
+</a>
+
+
+<a class="social-link" href="https://www.facebook.com/berne.ting" target="_blank">
+
+<svg viewBox="0 0 24 24" fill="currentColor">
+<path d="M22 12A10 10 0 1 0 10.44 21.9v-6.99H7.9V12h2.54V9.8
+c0-2.5 1.49-3.89 3.77-3.89
+1.09 0 2.23.2 2.23.2v2.46h-1.26
+c-1.24 0-1.63.77-1.63 1.56V12h2.78
+l-.44 2.91h-2.34v6.99A10 10 0 0 0 22 12"/>
+</svg>
+
+Facebook
+
+</a>
+
+
+
+<a class="social-link" href="mailto:berne.ting@gmail.com">
+
+<svg viewBox="0 0 24 24" fill="currentColor">
+<path d="M20 4H4c-1.1 0-2 .9-2 2v12
+c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6
+c0-1.1-.9-2-2-2zm0 4
+-8 5-8-5V6l8 5 8-5v2z"/>
+</svg>
+
+Email
+
+</a>
+
+</section>
+
+
+
+<div class="footer">
+Personal academic profile • Coursework demonstration
+</div>
+
+</main>
+
 </body>
 </html>
